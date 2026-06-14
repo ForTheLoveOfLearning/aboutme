@@ -332,6 +332,51 @@
     .cert-badge:hover { border-color: var(--purple-light); transform: translateY(-2px); }
     .cert-badge .cert-icon { color: var(--gold-light); }
 
+    /* ─── MINDMAPS ─── */
+    #mindmaps { background: var(--dark); }
+    .mindmaps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .mindmap-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(124,58,237,0.15);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .mindmap-card::before {
+      content: '';
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--purple), var(--cyan));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .mindmap-card:hover { transform: translateY(-4px); border-color: rgba(124,58,237,0.45); }
+    .mindmap-card:hover::before { transform: scaleX(1); }
+    .mindmap-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .mindmap-card h4 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.4rem; }
+    .mindmap-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+    .mindmap-link {
+      display: inline-flex;
+      margin-top: 1rem;
+      color: var(--gold-light);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .mindmap-link:hover { text-decoration: underline; }
+
     /* ─── CONNECT ─── */
     #connect { background: var(--dark-2); text-align: center; }
     .connect-grid {
@@ -399,6 +444,7 @@
       <li><a href="#advocacy">Advocacy</a></li>
       <li><a href="#speaking">Speaking</a></li>
       <li><a href="#recognition">Awards</a></li>
+      <li><a href="#mindmaps">Mindmaps</a></li>
       <li><a href="#connect" class="nav-cta">Let's Connect</a></li>
     </ul>
     <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
@@ -613,28 +659,79 @@
       <div class="awards-grid">
         <div class="award-card reveal"><div class="medal">🏅</div><h4>The 100 Club Coin</h4><div class="org">Microsoft · February 2025</div><p>A prestigious internal recognition awarded for exceptional performance and outstanding contribution.</p></div>
         <div class="award-card reveal" style="transition-delay:0.1s"><div class="medal">🪙</div><h4>One Microsoft Coin</h4><div class="org">Microsoft · April 2021</div><p>Awarded for exemplifying collaboration, transparency, and optimizing processes for Team Microsoft.</p></div>
-        <div class="award-card reveal" style="transition-delay:0.2s"><div class="medal">📐</div><h4>SOA Actuarial Exams</h4><div class="org">Society of Actuaries</div><p>Passed SOA Exam P (Probability) and Exam FM (Financial Mathematics) — a foundation built on rigorous analytical thinking.</p></div>
-      </div>
-      <div class="reveal">
-        <h3 style="font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:1.25rem;">Certifications &amp; Credentials</h3>
-        <div class="certs-grid">
-          <div class="cert-badge"><span class="cert-icon">🎯</span> PMP® — Project Management Professional</div>
-          <div class="cert-badge"><span class="cert-icon">🖥️</span> MCT — Microsoft Certified Trainer</div>
-          <div class="cert-badge"><span class="cert-icon">🌱</span> GPM-b — Green Project Management</div>
-          <div class="cert-badge"><span class="cert-icon">🤖</span> Data &amp; AI Specialist</div>
-          <div class="cert-badge"><span class="cert-icon">☁️</span> Microsoft Azure</div>
-          <div class="cert-badge"><span class="cert-icon">📊</span> Power BI</div>
+        </div>
+        <div class="reveal">
+          <h3 style="font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:1.25rem;">Certifications &amp; Credentials</h3>
+          <div class="certs-grid">
+            <div class="cert-badge"><span class="cert-icon">🎯</span> PMP® — Project Management Professional</div>
+            <div class="cert-badge"><span class="cert-icon">🖥️</span> MCT — Microsoft Certified Trainer</div>
+            <div class="cert-badge"><span class="cert-icon">🌱</span> GPM-b — Green Project Management</div>
+            <div class="cert-badge"><span class="cert-icon">🤖</span> Data &amp; AI Specialist</div>
+            <div class="cert-badge"><span class="cert-icon">☁️</span> Microsoft Azure</div>
+            <div class="cert-badge"><span class="cert-icon">📊</span> Power BI</div>
+            <div class="cert-badge"><span class="cert-icon">📐</span> SOA Actuarial Exams</div>
+            <div class="cert-badge"><span class="cert-icon">🏆</span> <a href="https://www.credly.com/users/sinead.deokiesingh" target="_blank" style="color:inherit;text-decoration:none;">Credly Digital Badges</a></div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <div class="section-divider"></div>
+    <div class="section-divider"></div>
 
-  <section id="connect">
-    <div class="container">
-      <div class="reveal">
-        <div class="chapter-label" style="justify-content:center">Chapter 7</div>
+    <section id="mindmaps">
+      <div class="container">
+        <div class="reveal">
+          <div class="chapter-label">Chapter 7</div>
+          <h2 class="section-title">Mindmaps <span class="highlight">Gallery</span></h2>
+          <p class="section-subtitle">A home for the interactive learning mindmaps I create across certifications, Copilot, and Microsoft ecosystem topics.</p>
+        </div>
+        <div class="mindmaps-grid">
+          <a href="https://fortheloveoflearning.github.io/mindmaps-gallery/" target="_blank" class="mindmap-card reveal">
+            <div class="mindmap-icon">🧠</div>
+            <h4>Mindmaps Gallery Hub</h4>
+            <p>Browse all current and future mindmap collections in one place.</p>
+            <span class="mindmap-link">Open gallery →</span>
+          </a>
+          <a href="https://fortheloveoflearning.github.io/AI-901/" target="_blank" class="mindmap-card reveal" style="animation-delay:0.05s">
+            <div class="mindmap-icon">🤖</div>
+            <h4>Microsoft Certifications</h4>
+            <p>Featured certification mindmaps, starting with the AI-901 interactive map.</p>
+            <span class="mindmap-link">Explore AI-901 →</span>
+          </a>
+          <a href="https://fortheloveoflearning.github.io/mindmaps-gallery/" target="_blank" class="mindmap-card reveal" style="animation-delay:0.1s">
+            <div class="mindmap-icon">📘</div>
+            <h4>Microsoft Applied Skills</h4>
+            <p>Practical skill pathways and role-based learning maps.</p>
+            <span class="mindmap-link">Coming soon →</span>
+          </a>
+          <a href="https://fortheloveoflearning.github.io/mindmaps-gallery/" target="_blank" class="mindmap-card reveal" style="animation-delay:0.15s">
+            <div class="mindmap-icon">✨</div>
+            <h4>M365 Copilot</h4>
+            <p>Copilot prompts, workflows, and adoption journeys.</p>
+            <span class="mindmap-link">Coming soon →</span>
+          </a>
+          <a href="https://fortheloveoflearning.github.io/mindmaps-gallery/" target="_blank" class="mindmap-card reveal" style="animation-delay:0.2s">
+            <div class="mindmap-icon">🏢</div>
+            <h4>Microsoft Cowork</h4>
+            <p>Collaboration, productivity, and modern work mindmaps.</p>
+            <span class="mindmap-link">Coming soon →</span>
+          </a>
+          <a href="https://fortheloveoflearning.github.io/mindmaps-gallery/" target="_blank" class="mindmap-card reveal" style="animation-delay:0.25s">
+            <div class="mindmap-icon">🔍</div>
+            <h4>Microsoft Scout</h4>
+            <p>Mindmaps that document how the Scout workspace and tools come together.</p>
+            <span class="mindmap-link">Coming soon →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section id="connect">
+      <div class="container">
+        <div class="reveal">
+          <div class="chapter-label" style="justify-content:center">Chapter 8</div>
         <h2 class="section-title" style="text-align:center">Let's <span class="highlight">Connect</span></h2>
         <p class="section-subtitle" style="margin:0 auto 2rem;text-align:center">Whether you want to collaborate, book a session, or just say hello — I'd love to hear from you.</p>
       </div>
